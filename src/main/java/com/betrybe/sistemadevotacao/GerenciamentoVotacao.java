@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
-  private ArrayList<PessoaCandidata> pessoasCandidatas;
-  private ArrayList<PessoaEleitora> pessoasEleitoras;
-  private ArrayList<String> cpfsComputados;
+  private final ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<PessoaCandidata>();
+  private final ArrayList<PessoaEleitora> pessoasEleitoras = new ArrayList<PessoaEleitora>();
+  private final ArrayList<String> cpfsComputados = new ArrayList<String>();
 
   @Override
   public void cadastrarPessoaCandidata(String nome, int numero) {
