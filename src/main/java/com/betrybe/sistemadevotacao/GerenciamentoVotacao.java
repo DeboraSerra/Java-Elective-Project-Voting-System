@@ -3,6 +3,9 @@ package com.betrybe.sistemadevotacao;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * The type Gerenciamento votacao.
+ */
 public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   private final ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<PessoaCandidata>();
@@ -23,7 +26,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   @Override
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora person : pessoasEleitoras) {
-      if (person.getCpf() == cpf) {
+      if (Objects.equals(person.getCpf(), cpf)) {
         System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
@@ -54,8 +57,10 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     }
     int total = cpfsComputados.size();
     for (PessoaCandidata candidate : pessoasCandidatas) {
-      double percent = (candidate.getVotos() / total) * 100;
-      System.out.printf("Nome: %s - %i votos (%.2d%)%n", candidate.getNome(), candidate.getVotos(),
+      double votesByTotal = (double) candidate.getVotos() / total;
+      double percent = votesByTotal * 100;
+      System.out.printf("Nome: %s - %d votos ( %.0f %% )%n", candidate.getNome(),
+          candidate.getVotos(),
           percent);
     }
     System.out.println("Total de votos: " + total);

@@ -2,8 +2,17 @@ package com.betrybe.sistemadevotacao;
 
 import java.util.Scanner;
 
+/**
+ * The type Principal.
+ */
 public class Principal {
 
+  /**
+   * Register candidate.
+   *
+   * @param scanner the scanner
+   * @param manager the manager
+   */
   static void registerCandidate(Scanner scanner, GerenciamentoVotacao manager) {
     String question = "Cadastrar pessoa candidata?\n"
         + "1 - Sim\n"
@@ -21,6 +30,12 @@ public class Principal {
     }
   }
 
+  /**
+   * Register people.
+   *
+   * @param scanner the scanner
+   * @param manager the manager
+   */
   static void registerPeople(Scanner scanner, GerenciamentoVotacao manager) {
     String question = "Cadastrar pessoa eleitora?\n"
         + "1 - Sim\n"
@@ -39,6 +54,12 @@ public class Principal {
     }
   }
 
+  /**
+   * Register vote.
+   *
+   * @param scanner the scanner
+   * @param manager the manager
+   */
   static void registerVote(Scanner scanner, GerenciamentoVotacao manager) {
     String question = " Entre com o número correspondente à opção desejada:\n"
         + " 1 - Votar\n"
@@ -63,6 +84,11 @@ public class Principal {
     }
   }
 
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     GerenciamentoVotacao manager = new GerenciamentoVotacao();
